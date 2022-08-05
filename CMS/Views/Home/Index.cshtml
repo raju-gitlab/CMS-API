@@ -1,0 +1,628 @@
+﻿@model Tuple<List<CMS.MODEL.Master.CourseEditModel>, List<CMS.MODEL.Event.EventCardModel>, List<CMS.MODEL.Master.CourseTeacherModel>>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- slider -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <!---->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link href="~/Styles/GlobalCssProperties/style.css" rel="stylesheet" />
+    <link href="~/Styles/GlobalCssProperties/HomePageDoubleSlider.css" rel="stylesheet" />
+    <link href="~/Styles/GlobalCssProperties/HomePageProfileCard.css" rel="stylesheet" />
+    <link href="~/Styles/GlobalCssProperties/HomePageCourseCard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="~/Styles/GlobalCssProperties/ImageSlider.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
+    <script src="~/Scripts/ImageSliderJS/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.jssor_1_slider_init = function () {
+
+            var jssor_1_options = {
+                $AutoPlay: 1,
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$
+                },
+                $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$,
+                    $SpacingX: 20,
+                    $SpacingY: 20
+                }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 3000;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+</head>
+<body>
+    <section class="hero-section overlay bg-cover" data-background="https://i.pinimg.com/originals/8a/88/46/8a88467139d4202282d5bbd32d04122c.jpg">
+        <div class="container">
+            <div class="hero-slider">
+                <!-- slider item -->
+                <div class="hero-slider-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
+                            <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer
+                            </p>
+                            <a href="contact.html" class="btn btn-primary btn-sm" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider item -->
+                <div class="hero-slider-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
+                            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer
+                            </p>
+                            <a href="contact.html" class="btn btn-primary btn-sm" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider item -->
+                <div class="hero-slider-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Your bright future is our mission</h1>
+                            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer
+                            </p>
+                            <a href="contact.html" class="btn btn-primary btn-sm" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /hero slider -->
+    <!-- banner-feature -->
+    <section class="bg-gray overflow-md-hidden">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-xl-4 col-lg-5 align-self-end">
+                    <img src="~/Upload ProjectData/ImageSlider/idol.PNG" style="top:-55px;position:relative" data-aos="fade-right" />
+                    <p style="font-style:italic;position:relative;left:25%" data-aos="zoom-in">
+                        <strong>
+                            - Swami Vivekananda
+                        </strong>
+                    </p>
+                </div>
+                <div class="col-xl-8 col-lg-7">
+                    <div class="row feature-blocks bg-gray justify-content-between successblockbackgroundcolor">
+                        <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+                            <i class="ti-world mb-xl-4 mb-lg-3 mb-4 feature-icon" data-aos="zoom-in"></i>
+                            <h3 class="mb-xl-4 mb-lg-3 mb-4" data-aos="fade-up">Internet Facility Campus</h3>
+                            <p data-aos="fade-up">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+                            <i class="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon" data-aos="zoom-in"></i>
+                            <h3 class="mb-xl-4 mb-lg-3 mb-4" data-aos="fade-up">Digital Classroom And Bigger Computer Lab.  </h3>
+                            <p data-aos="fade-up">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+                            <i class="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon" data-aos="zoom-in"></i>
+                            <h3 class="mb-xl-4 mb-lg-3 mb-4" data-aos="fade-up">Bigger Library</h3>
+                            <p data-aos="fade-up">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+                            <i class="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon" data-aos="zoom-in"></i>
+                            <h3 class="mb-xl-4 mb-lg-3 mb-4" data-aos="fade-up">Anti-Ragging</h3>
+                            <p data-aos="fade-up">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+
+    </section>
+    <!-- /banner-feature -->
+    <!-- about us -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-2 order-md-1">
+                    @*<h2 class="section-title" data-aos="fade-right">About KITM</h2>*@
+                    <p data-aos="fade-right">During the Gupta period, the whole North Bengal was known as <br /> “PUNDRA VARDHAN BHUKTI “ (PRADESH) .It was again sub-divided into number of "VISHAYAS"(DISTRICT). KOTIBARSHA was one of the districts.Bangarh was the capital of Kotibarsha. Now the maximum area of Kotibarsha is known as Buniadpur-Gangarampur.</p>
+                    <p data-aos="fade-right">The College <strong>Kotibarsha Institute Of Technology and Management</strong> is promoted by Knocks Educare Foundation, Specifically to Cater to the growing needs of Management & IT Education in India. It is the prime constituent of its academic complex at Buniadpur, Dakshin Dinajpur (North Bengal), West Bengal. Over a period of time KITM has been catering to the needs of various segments of IT & Management education aspirants. The flagship programmes of the college Include BBA, BCA, BHM, BHSM, M.Sc(I.S)</p>
+                    @*<a href="about.html" class="btn btn-primary-outline btn-sm" data-aos="fade-up">Learn more</a>*@
+                </div>
+                <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0" data-aos="fade-left">
+                    <div class="container">
+                        <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#mycarousel" data-slide-to="1"></li>
+                                <li data-target="#mycarousel" data-slide-to="2"></li>
+                                <li data-target="#mycarousel" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/Upload ProjectData/ImageSlider/director.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item"> <img src="~/Upload ProjectData/ImageSlider/Screenshot 2021-07-11 151010.png" class="d-block w-100" alt="..."> </div>
+                                <div class="carousel-item"> <img src="~/Upload ProjectData/ImageSlider/Intior.png" class="d-block w-100" alt="..."> </div>
+                                <div class="carousel-item"> <img src="~/Upload ProjectData/ImageSlider/field.png" class="d-block w-100" alt="..."> </div>
+                            </div> <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                                <div class="banner-icons"> <span class="fas fa-angle-left"></span> </div> <span class="sr-only">Previous</span>
+                            </a> <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                                <div class="banner-icons"> <span class="fas fa-angle-right"></span> </div> <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- /about us -->
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;visibility:hidden;" data-aos="zoom-in">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="~/Upload ProjectData/ImageSlider/Capture.PNG" />
+            </div>
+            <div style="background-color:#000000;">
+                <img data-u="image" style="opacity:0.8;" src="~/Upload ProjectData/ImageSlider/reception.PNG" />
+            </div>
+            <div>
+                <img data-u="image" src="~/Upload ProjectData/ImageSlider/Captureex4.PNG" />
+            </div>
+            <div>
+                <img data-u="image" src="~/Upload ProjectData/ImageSlider/NCC.PNG" />
+            </div>
+            <div>
+                <img data-u="image" src="https://i.pinimg.com/originals/a4/2b/19/a42b19099b7297ca524e83a0eca26494.jpg" />
+            </div>
+        </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">image gallery</a>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:12px;height:12px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <!-- courses -->
+    <section class="section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center section-title justify-content-between">
+                        <h2 class="mb-0 text-nowrap mr-3" style="font-family: 'Josefin Sans', sans-serif; font-size: 32px;" data-aos="fade-right">Courses We Offers</h2>
+                        <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                        <div>
+                            <a href="/Course/Courses" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" data-aos="fade-left">see all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- course list -->
+            <div class="row justify-content-center">
+                <!-- course items -->
+                @foreach (var Item1 in Model.Item1)
+                {
+                    <div class="col-md-4" data-aos="zoom-in-down">
+                        <div class="content">
+                            <a href="/Course/CourseDetails?ciD=@Item1.CourseGuid">
+                                <div class="content-overlay"></div> <img class="content-image" src="@Url.Content(@Item1.CourseImagePath)">
+                                <div class="content-details fadeIn-bottom">
+                                    <h3 class="content-title">@Item1.CourseName</h3>
+                                    <p class="content-text">@Item1.CourseType</p>
+                                    <a href="/Course/CourseDetails?ciD=@Item1.CourseGuid" class="btn btn-primary btn-sm left">Apply now</a>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <!-- /course list -->
+            <!-- mobile see all button -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="courses.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /courses -->
+    <!-- funfacts -->
+    <section class="section-sm bg-primary" data-aos="zoom-in" data-aos-duration="500" style="margin-bottom:5px;">
+        <div class="container">
+            <div class="row">
+                <!-- funfacts item -->
+                <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+                    <div class="text-center">
+                        <h2 class="count text-white" data-count='60'>0</h2>
+                        <h5 class="text-white">TEACHERS</h5>
+                    </div>
+                </div>
+                <!-- funfacts item -->
+                <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+                    <div class="text-center">
+                        <h2 class="count text-white" data-count="4">0</h2>
+                        <h5 class="text-white">COURSES</h5>
+                    </div>
+                </div>
+                <!-- funfacts item -->
+                <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+                    <div class="text-center">
+                        <h2 class="count text-white" data-count="5000">0</h2>
+                        <h5 class="text-white">STUDENTS</h5>
+                    </div>
+                </div>
+                <!-- funfacts item -->
+                <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+                    <div class="text-center">
+                        <h2 class="count text-white" data-count="100">0</h2>
+                        <h5 class="text-white">PROGRAMS AND EVENTS</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /funfacts -->
+    <!-- cta -->
+    <section class="section bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h6 class="text-white font-secondary mb-0">Click to Join the Advance Workshop</h6>
+                    <h2 class="section-title text-white">Training In Advannce Networking</h2>
+                    <a href="#" class="btn btn-secondary btn-sm">join now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /cta -->
+    <!-- success story -->
+    <section class="section bg-cover" data-background="https://image.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9640.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-4 position-relative success-video" data-aos="zoom-in" data-aos-delay="500">
+                    <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
+                        <i class="ti-control-play"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-8" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="background-white p-5">
+                        <h2 class="section-title" data-aos="fade-left" data-aos-duration="400">Success Stories</h2>
+                        <p data-aos="fade-right" data-aos-duration="600">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                        <p data-aos="fade-right" data-aos-duration="600">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /success story -->
+    <!-- events -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center section-title justify-content-between">
+                        <h2 class="mb-0 text-nowrap mr-3" data-aos="fade-right" style="font-family: 'Josefin Sans', sans-serif; font-size: 32px;">Events</h2>
+                        <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                        <div>
+                            <a href="/Event/UpcomingEvents" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" data-aos="fade-left">see all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- event -->
+                @foreach (var Item2 in Model.Item2)
+                {
+                    <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-down">
+                        <div class="card border-0 rounded-0 hover-shadow">
+                            <div class="card-img position-relative">
+                                <img class="card-img-top rounded-0" src="@Item2.ImagePath" alt="event thumb">
+                                <div class="card-date"><span>18</span><br>December</div>
+                            </div>
+                            <div class="card-body card-bodyBgColor">
+                                <!-- location -->
+                                <p><i class="ti-location-pin text-primary mr-2"></i>@Item2.Location</p>
+                                <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <!-- mobile see all button -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="course.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /events -->
+    <!-- teachers -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center section-title justify-content-between">
+                        <h2 class="mb-0 text-nowrap mr-3" style="font-family: 'Josefin Sans', sans-serif; font-size: 32px;" data-aos="fade-right">Our Teachers</h2>
+                        <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                        <div>
+                            <a href="/Teachers/OurTeachers" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" data-aos="fade-left">see all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- teacher -->
+                @foreach (var Item3 in Model.Item3)
+                {
+                    <div class="col-lg-4" data-aos="zoom-in-down">
+                        <div class="card2 p-0">
+                            <div class="card2-image"> <img src="@Url.Content(@Item3.ImagePath)" alt=""> </div>
+                            <div class="card2-content d-flex flex-column align-items-center">
+                                <h4 class="pt-2">
+                                    <a href="/Teachers/Teacher_SingleDetails?TSLid=@Item3.TeacherGuid" style="color:black">
+                                        @Item3.TeacherName
+                                    </a>
+                                </h4>
+                                <h5>@Item3.RoleName</h5>
+                                <ul class="social-icons d-flex justify-content-center">
+                                    <li style="--i:1"> <a href="#"> <i class="bi bi-facebook"></i> </a> </li>
+                                    <li style="--i:1"> <a href="#"> <i class="bi bi-instagram"></i> </a> </li>
+                                    <li style="--i:2"> <a href="#"> <i class="bi bi-twitter"></i> </a> </li>
+                                    <li style="--i:3"> <a href="#"> <i class="bi bi-linkedin"></i> </a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </section>
+    <!-- /teachers -->
+    <br /><br />
+    <!-- blog -->
+    <section class="section pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center section-title justify-content-between">
+                        <h3 class="mb-0 text-nowrap mr-3" style="font-family: 'Josefin Sans', sans-serif; font-size:32px;" data-aos="fade-right">Testimonials</h3>
+                        <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                        @*<div>
+                                <a href="/Event/UpcomingEvents" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- blog post -->
+                <!--<article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+                    <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
+                    <div class="card-body card-bodyBgColor">-->
+                <!-- post meta -->
+                <!--<ul class="list-inline mb-3">-->
+                <!-- post date -->
+                <!--<li class="list-inline-item mr-3 ml-0">August 28, 2018</li>-->
+                <!-- author -->
+                <!--<li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li>
+                            </ul>
+                            <a href="blog-single.html">
+                                <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                            </a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+                        </div>
+                    </div>
+                </article>-->
+                <!-- blog post -->
+                <!--<article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+                    <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
+                    <div class="card-body">-->
+                <!-- post meta -->
+                <!--<ul class="list-inline mb-3">-->
+                <!-- post date -->
+                <!--<li class="list-inline-item mr-3 ml-0">August 13, 2018</li>-->
+                <!-- author -->
+                <!--<li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+                            </ul>
+                            <a href="blog-single.html">
+                                <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                            </a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+                        </div>
+                    </div>
+                </article>-->
+                <!-- blog post -->
+                <!--<article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+                    <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
+                    <div class="card-body">-->
+                <!-- post meta -->
+                <!--<ul class="list-inline mb-3">-->
+                <!-- post date -->
+                <!--<li class="list-inline-item mr-3 ml-0">August 24, 2018</li>-->
+                <!-- author -->
+                <!--<li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+                            </ul>
+                            <a href="blog-single.html">
+                                <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                            </a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+                        </div>
+                    </div>
+                </article>-->
+                <div class="slider owl-carousel" data-aos="zoom-in-down">
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/5f/b6/98/5fb69835c1cb8637298f88c8f4261aa0.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Dipankar Ghosh</div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/6e/36/28/6e3628f5c7009264b687bdd5e97c1792.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Sanjit Mandal</div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/64/4a/a9/644aa9961151cd5edb52d24f74462da0.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Washim Bari</div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/7e/02/78/7e0278eb3ac7e45be78632a653015578.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Pritam Gupta</div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/72/45/49/724549d30059300bd549d0db2e7a01b9.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Subahbrata Chakrabarty</div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="img"><img src="https://i.pinimg.com/originals/d1/65/0d/d1650ddb706a42695c7844fbadd30223.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="title">Prasenjit Sarkar</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- /blog -->
+    <!--Script Section-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        jssor_1_slider_init();
+        AOS.init();
+
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000, //2000ms = 2s;
+            autoplayHoverPause: true,
+        });
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+    <!--End Script Section-->
+</body>
+</html>
